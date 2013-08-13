@@ -1,4 +1,10 @@
 # Query Parameters break to JSON header insert
+
+when CLIENT_ACCEPTED {
+   set default_pool [LB::server pool]
+}
+
+
 when HTTP_REQUEST {
 	   if { [HTTP::path] starts_with "/pxl" } {
 		
